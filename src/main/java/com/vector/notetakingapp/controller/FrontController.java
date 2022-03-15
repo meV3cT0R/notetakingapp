@@ -66,7 +66,7 @@ public class FrontController {
     }
     public static void generatePdf(String fileName) throws DocumentException, IOException {
         Document document = new Document();
-        PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream("src/main/resources/index.pdf"));
+        PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream("../note.pdf"));
 
         document.open();
         XMLWorkerHelper.getInstance().parseXHtml(writer,document, new FileInputStream(fileName));
@@ -75,7 +75,7 @@ public class FrontController {
     
     public static void generatePdf(FileInputStream input) throws DocumentException, IOException {
         Document document = new Document();
-        PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream("src/main/resources/index.pdf"));
+        PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream("new.pdf"));
 
         document.open();
         XMLWorkerHelper.getInstance().parseXHtml(writer,document, input);
